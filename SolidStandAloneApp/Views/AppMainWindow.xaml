@@ -1,0 +1,59 @@
+﻿<Window x:Name="window" x:Class="SolidStandAloneApp.Views.AppMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:vm="clr-namespace:SolidStandAloneApp.ViewModels"
+        xmlns:behaviors="clr-namespace:Support.Behaviors;assembly=Support"
+        xmlns:controls="clr-namespace:Support.Controls;assembly=Support"
+        xmlns:local="clr-namespace:SolidStandAloneApp.Views"
+        mc:Ignorable="d"
+        Title="{StaticResource WindowTitle}" 
+        Height="700" MinWidth="700" Width="700"
+        Style="{StaticResource WinResizeStyle}"
+        Background="{StaticResource MainBackgroundBrush}"  
+        SourceInitialized="Window_SourceInitialized" WindowStartupLocation="CenterScreen">
+
+    <Window.DataContext>
+        <vm:AppMainWindowMV/>
+    </Window.DataContext>
+
+    <!--<Window.InputBindings>
+        <KeyBinding Command="{Binding StopReadingPdfDocsComm}" Key="Esc"/>
+    </Window.InputBindings>-->
+
+    <Window.Resources>
+        <DataTemplate x:Key="TripleDot">
+            <Path Fill="{StaticResource TextForegroundBrush}" Stretch="UniformToFill" Margin="13" Data="m 0.54274517 0.99609375 a 0.54266827 0.49804688 0 1 1 0 -0.99609375 0.54266827 0.49804688 0 0 1 0 0.99609375 z m 1.80889423 0 a 0.54266827 0.49804688 0 1 1 0 -0.99609375 0.54266827 0.49804688 0 0 1 0 0.99609375 z m 1.8088942 0 a 0.54266827 0.49804688 0 1 1 0 -0.99609375 0.54266827 0.49804688 0 0 1 0 0.99609375 z"/>
+        </DataTemplate>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="30"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="•" Grid.Column="1" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding DataContext.IsConnected, ElementName=window, UpdateSourceTrigger=PropertyChanged}" Value="True">
+                                <Setter Property="Foreground" Value="#FF58EFBB"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding DataContext.IsConnected, ElementName=window, UpdateSourceTrigger=PropertyChanged}" Value="False">
+                                <Setter Property="Foreground" Value="Red"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+
+        </Grid>
+    </Grid>
+</Window>

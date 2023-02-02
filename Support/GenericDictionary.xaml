@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Support;component/Controls/CustomButton.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Support;component/Dictionaries/ConvertersDictionary.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Support;component/Dictionaries/ColorsDictionary.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Support;component/Dictionaries/VectorsDictionary.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Support;component/Dictionaries/TextDictionary.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Support;component/Dictionaries/UIStyleDictionary.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

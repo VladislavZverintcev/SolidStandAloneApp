@@ -1,0 +1,83 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=System.Runtime"
+                    xmlns:local="clr-namespace:Support.Controls">
+
+    <Style TargetType="{x:Type local:CustomButton}">
+        <Style.Resources>
+            <GeometryGroup x:Key="DefaultIcon">
+                <Geometry>
+                    m 1.4000418 1.7994563 c 0 -0.1097867 0.089921 -0.1997072 0.1997073 -0.1997072 0.1097867 0 0.1997072 0.089921 0.1997072 0.1997072 0 0.1097867 -0.08992 0.1997072 -0.1997072 0.1997072 -0.1097867 0 -0.1997073 -0.089921 -0.1997073 -0.1997072 z m 1.9991636 0.1997072 c 0.1097867 0 0.1997176 -0.089921 0.1997176 -0.1997072 0 -0.1097867 -0.089931 -0.1997072 -0.1997176 -0.1997072 -0.1097867 0 -0.1997073 0.089921 -0.1997073 0.1997072 0 0.1097867 0.089921 0.1997072 0.1997073 0.1997072 z M 5 2.5 C 5 3.8801757 3.8801757 5 2.5 5 1.1198243 5 0 3.8801757 0 2.5 0 1.1198243 1.1198243 0 2.5 0 3.8791301 0 5 1.1198243 5 2.5 Z m -0.2007528 0 C 4.7992472 1.2202008 3.7797992 0.20075282 2.5 0.20075282 1.2202008 0.20075282 0.20075282 1.2202008 0.20075282 2.5 0.20075282 3.7797992 1.2202008 4.7992472 2.5 4.7992472 3.7797992 4.7992472 4.7992472 3.7797992 4.7992472 2.5 Z M 3.4399833 3.2590966 C 3.1597658 3.1189879 3.1994981 2.8596821 2.9997909 2.6787955 c -0.1202426 -0.1003869 -0.280228 -0.1003869 -0.4203262 0 -0.019866 0.019856 -0.059598 0.039732 -0.079475 0.079465 -0.019856 -0.019856 -0.039732 -0.059599 -0.079465 -0.079465 -0.1401088 -0.1003869 -0.3199498 -0.1003869 -0.4203262 0 C 1.8004912 2.8586366 1.8402236 3.1189879 1.5600061 3.2590966 1.3602988 3.359473 1.0204829 3.3385613 0.81973004 3.0991217 c 0 0.1798306 0.49979086 0.679632 1.03931406 0.6597658 0.3795483 -0.019866 0.5803012 -0.2603513 0.6597763 -0.4203262 0.079465 0.1599749 0.2802175 0.3994144 0.6597658 0.4203262 0.5395232 0.019866 1.0393141 -0.4799247 1.0393141 -0.6597658 -0.238394 0.2404852 -0.57821 0.2603513 -0.777917 0.1599749 z
+                </Geometry>
+            </GeometryGroup>
+            <system:String x:Key="DefaultText">
+                Жмакай
+            </system:String>
+        </Style.Resources>
+        <Setter Property="Control.Background" Value="#FF403E3E"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderBrush" Value="DimGray"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CorRadius" Value="5"/>
+        <Setter Property="Icon" Value="{DynamicResource DefaultIcon}"/>
+        <Setter Property="IconStretch" Value="UniformToFill"/>
+        <Setter Property="IconMargin" Value="5"/>
+        <Setter Property="Text" Value="{DynamicResource DefaultText}"/>
+        <Setter Property="ToolTipService.ShowOnDisabled" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:CustomButton}">
+                    <Border x:Name="Border" 
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CorRadius}">
+                        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0" x:Name="Icon"
+                                Visibility="{TemplateBinding IconVisibility}"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Center"
+                                Margin="{TemplateBinding IconMargin}">
+                                <Path 
+                                    Stretch="{TemplateBinding IconStretch}"
+                                    Fill="{TemplateBinding Foreground}"
+                                    Data="{TemplateBinding Icon}"/>
+                            </Border>
+                            <TextBlock Grid.Column="1" x:Name="Text"
+                                Text="{TemplateBinding Text}"
+                                TextAlignment="Center"
+                                Margin="0, 0, 5, 0"
+                                Foreground="{TemplateBinding Foreground}"
+                                Visibility="{TemplateBinding TextVisibility}"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Icon" Value="{x:Null}">
+                            <Setter Property="IconVisibility" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="Text" Value="">
+                            <Setter Property="TextVisibility" Value="Collapsed"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="WhiteSmoke"/>
+                <Setter Property="Foreground" Value="Black"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="Transparent"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

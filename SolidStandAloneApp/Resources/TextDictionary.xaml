@@ -1,0 +1,131 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=System.Runtime">
+    
+    <!--#region Title -->
+    <system:String x:Key="WindowTitle">
+        SolidStandAloneApp
+    </system:String>
+
+    <system:String x:Key="SelectorSegmentsWindowTitle">
+        SolidStandAloneApp: выбор сегментов
+    </system:String>
+
+    <system:String x:Key="AboutProgrammWindowTitle">
+        SolidStandAloneApp: сведения
+    </system:String>
+    <!--#endregion Title -->
+    
+    <!--#region ToolTip -->
+    <system:String x:Key="CancelReadingPdfDocToolTip">
+        Отменить чтение PDF-документов (Esc)
+    </system:String>
+
+    <system:String x:Key="AddPdfDocToolTip">
+        Добавить PDF-документ
+    </system:String>
+
+    <system:String x:Key="RemovePdfDocToolTip">
+        Удалить PDF-документ
+    </system:String>
+
+    <system:String x:Key="RemoveAllPdfDocToolTip">
+        Удалить все PDF-документы
+    </system:String>
+
+    <system:String x:Key="MergePdfDocsToolTip">
+        Объединить PDF-документы
+    </system:String>
+
+    <system:String x:Key="UnmergePdfDocToolTip">
+        Разделить PDF-документ
+    </system:String>
+
+    <system:String x:Key="OpenPdfDocAtOtherAppToolTip">
+        Открыть PDF-документ в другом приложении для просмотра 
+    </system:String>
+
+    <system:String x:Key="SelectPdfDocForSegmentationToolTip">
+        Выбрать PDF-документы для сегментирования
+    </system:String>
+
+    <system:String x:Key="MoveUpPdfDocToolTip">
+        Переместить PDF-документ влево
+    </system:String>
+
+    <system:String x:Key="MoveRightPdfDocToolTip">
+        Переместить PDF-докумена вправо
+    </system:String>
+
+    <system:String x:Key="SelectSegmentOfPdfDocToolTip">
+        Выбрать сегменты PDF-документа
+    </system:String>
+
+    <system:String x:Key="ConfrimSelectSegmentOfPdfDocToolTip">
+        Подтвердить выбор сегмента PDF-документа (Enter)
+    </system:String>
+
+    <system:String x:Key="UnconfrimSelectSegmentOfPdfDocToolTip">
+        Отменить выбор сегмента PDF-документа (Esc)
+    </system:String>
+
+    <system:String x:Key="EditSegmentOfPdfDocToolTip">
+        Редактировать сегмент PDF-документа
+    </system:String>
+
+    <system:String x:Key="DeleteSegmentOfPdfDocToolTip">
+        Удалить сегмент PDF-документа
+    </system:String>
+
+    <system:String x:Key="AboutProgrammToolTip">
+        Смотреть сведения о программе
+    </system:String>
+    <!--#endregion ToolTip -->
+      
+    <!--#region Description -->
+    <system:String x:Key="ReadingPdfDocDescription">
+        Чтение PDF-документов...
+    </system:String>
+
+    <system:String x:Key="CancelReadingPdfDocDescription">
+        Отменить
+    </system:String>
+
+    <system:String x:Key="CountPdfDocsDescription">
+        Общее кол.-во PDF-документов:
+    </system:String>
+
+    <system:String x:Key="CountSegmentsPdfDocsDescription">
+        Общее кол.-во сегментов PDF-документов:
+    </system:String>
+
+    <system:String x:Key="IsUsingCustomRangeDescription">
+        Выбор отдельных страниц
+    </system:String>
+
+    <system:String x:Key="RangeDescription">
+        Диапазон:
+    </system:String>
+
+    <system:String x:Key="StartRangeDescription">
+        от:
+    </system:String>
+
+    <system:String x:Key="EndRangeDescription">
+        до:
+    </system:String>
+
+    <system:String x:Key="PagesDescription">
+        Страницы:
+    </system:String>
+
+    <system:String x:Key="NumberOfPagesDescription">
+        номера:
+    </system:String>
+
+    <system:String x:Key="AppDescription">
+        Предназначено для объединения и разбиения содержимого файлов формата PDF
+    </system:String>
+    <!--#endregion Description -->
+    
+</ResourceDictionary>
